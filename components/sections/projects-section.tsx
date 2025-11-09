@@ -22,7 +22,7 @@ const projects = [
       "Technical assessment project built for a real job application. Displays comprehensive information about movies and series including details, ratings, and descriptions. No streaming functionality, focused on UI/UX and data presentation.",
     image: "/netflix-clone.png",
     tags: ["React", "Next.js", "Tailwind CSS", "API Integration"],
-    liveUrl: "https://netflix-clone-pied-three.vercel.app",
+    liveUrl: "https://streaming-service-clone-net.vercel.app",
     featured: true,
   },
   {
