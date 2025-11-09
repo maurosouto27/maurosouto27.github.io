@@ -1,26 +1,34 @@
-"use client"
+"use client";
 
-import { ArrowDown } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { ArrowDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
   const scrollToAbout = () => {
-    const element = document.querySelector("#about")
+    const element = document.querySelector("#projects");
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 relative">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center px-4 relative"
+    >
       <div className="container mx-auto max-w-4xl text-center">
         {/* Main content with fade-in animation */}
         <div className="space-y-6 animate-fade-in-up">
-          <h1 className="text-5xl md:text-7xl font-bold text-balance">Mauro Souto</h1>
-          <p className="text-xl md:text-2xl text-muted-foreground animate-fade-in-up delay-100">Full Stack Developer</p>
+          <h1 className="text-5xl md:text-7xl font-bold text-balance">
+            Mauro Souto
+          </h1>
+          <p className="text-xl md:text-2xl text-muted-foreground animate-fade-in-up delay-100">
+            Full Stack Developer
+          </p>
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-fade-in-up delay-200">
-            Building modern web applications with React, TypeScript, Next.js, and AWS. Passionate about creating
-            efficient, scalable solutions and clean code.
+            Building modern web applications with React, TypeScript, Next.js,
+            and AWS. Passionate about creating efficient, scalable solutions and
+            clean code.
           </p>
 
           {/* CTA Button */}
@@ -38,5 +46,5 @@ export function HeroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
