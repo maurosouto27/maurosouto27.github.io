@@ -1,30 +1,44 @@
-"use client"
+"use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const skillCategories = [
   {
     title: "Frontend",
-    skills: ["React.js", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "Angular", "React Native", "HTML/CSS"],
+    skills: [
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "JavaScript",
+      "Tailwind CSS",
+      "HTML/CSS",
+    ],
   },
   {
     title: "Backend",
-    skills: ["Node.js", "GraphQL", "PostgreSQL", "Python", "Django", "Groovy", "REST APIs"],
+    skills: [
+      "Node.js",
+      "Python",
+      "Django",
+      "MongoDB",
+      "PostgreSQL",
+      "REST APIs",
+    ],
   },
   {
     title: "Tools & Infrastructure",
-    skills: ["AWS", "Docker", "CI/CD", "Git", "Playwright", "Cypress", "SQL"],
+    skills: ["AWS", "Docker", "CI/CD", "Git", "Playwright", "Cypress"],
   },
   {
     title: "Other",
     skills: ["E2E Testing", "Automation", "DevOps", "Agile", "English (C2)"],
   },
-]
+];
 
 export function SkillsSection() {
-  const { elementRef, isVisible } = useScrollAnimation(0.1)
+  const { elementRef, isVisible } = useScrollAnimation(0.1);
 
   return (
     <section id="skills" className="py-20 px-4 bg-muted/30">
@@ -43,7 +57,9 @@ export function SkillsSection() {
             <Card
               key={index}
               className={`border-0 shadow-lg hover:shadow-xl transition-all duration-700 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
               }`}
               style={{ transitionDelay: `${(index + 1) * 100}ms` }}
             >
@@ -53,7 +69,11 @@ export function SkillsSection() {
               <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, skillIndex) => (
-                    <Badge key={skillIndex} variant="secondary" className="text-sm">
+                    <Badge
+                      key={skillIndex}
+                      variant="secondary"
+                      className="text-sm"
+                    >
                       {skill}
                     </Badge>
                   ))}
@@ -64,5 +84,5 @@ export function SkillsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

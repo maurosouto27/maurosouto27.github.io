@@ -1,19 +1,18 @@
-"use client"
+"use client";
 
-import { ExternalLink } from "lucide-react"
-import Image from "next/image"
-import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+import { ExternalLink } from "lucide-react";
+import Image from "next/image";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const projects = [
   {
     id: 1,
     title: "Inti Aventura",
     description:
-      "A real production web application for Inti Aventura travel company. Features a private admin dashboard with authentication for managing trips and bookings. Public section currently in development. Active project with real clients.",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-11-08%20at%2010.23.06%E2%80%AFPM.png-3jgAuQLY22iLj27NHYOnrn4OuuZ6Kn.jpeg",
-    tags: ["React", "Next.js", "TypeScript", "PostgreSQL", "Authentication"],
-    liveUrl: "https://dev-inti-aventura.vercel.app",
+      "A real production web application for Inti Aventura travel company. Features a private admin dashboard with authentication for managing trips. Public section currently in development. Active project with real clients.",
+    image: "/inti-aventura.png",
+    tags: ["React", "Next.js", "TypeScript", "MongoDB", "Authentication"],
+    liveUrl: "https://dev-inti-aventura.vercel.app/login",
     featured: true,
   },
   {
@@ -21,7 +20,7 @@ const projects = [
     title: "Netflix Clone",
     description:
       "Technical assessment project built for a real job application. Displays comprehensive information about movies and series including details, ratings, and descriptions. No streaming functionality, focused on UI/UX and data presentation.",
-    image: "/images/netflix-clone-preview.jpg",
+    image: "/netflix-clone.png",
     tags: ["React", "Next.js", "Tailwind CSS", "API Integration"],
     liveUrl: "https://netflix-clone-pied-three.vercel.app",
     featured: true,
@@ -31,16 +30,15 @@ const projects = [
     title: "Memory Game",
     description:
       "Classic memory card game built years ago as a practice project. Features smooth animations and interactive gameplay. No scoring system, focused on demonstrating CSS animations and game logic fundamentals.",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-11-08%20at%2010.22.48%E2%80%AFPM-Z772mLZ3jWzg3ZgLCJUbVMcyNPMxSr.png",
+    image: "/memory-game.png",
     tags: ["JavaScript", "CSS Animations", "Game Logic"],
     liveUrl: "https://memory-game-flax-theta.vercel.app",
     featured: true,
   },
-]
+];
 
 export function ProjectsSection() {
-  const { elementRef, isVisible } = useScrollAnimation(0.1)
+  const { elementRef, isVisible } = useScrollAnimation(0.1);
 
   return (
     <section id="projects" className="py-20 px-4 bg-muted/30">
@@ -52,9 +50,12 @@ export function ProjectsSection() {
           }`}
           ref={elementRef}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">My Projects</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">
+            My Projects
+          </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            A selection of projects showcasing my skills in frontend, backend, and interface design.
+            A selection of projects showcasing my skills in frontend, backend,
+            and interface design.
           </p>
         </div>
 
@@ -64,7 +65,9 @@ export function ProjectsSection() {
             <div
               key={project.id}
               className={`group bg-card rounded-xl overflow-hidden border border-border shadow-lg hover:shadow-2xl transition-all duration-700 hover:-translate-y-2 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
               }`}
               style={{ transitionDelay: `${(index + 2) * 100}ms` }}
             >
@@ -93,13 +96,20 @@ export function ProjectsSection() {
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-balance">{project.title}</h3>
-                <p className="text-muted-foreground mb-4 text-pretty leading-relaxed">{project.description}</p>
+                <h3 className="text-xl font-bold mb-2 text-balance">
+                  {project.title}
+                </h3>
+                <p className="text-muted-foreground mb-4 text-pretty leading-relaxed">
+                  {project.description}
+                </p>
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
-                    <span key={tag} className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full">
+                    <span
+                      key={tag}
+                      className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full"
+                    >
                       {tag}
                     </span>
                   ))}
@@ -123,5 +133,5 @@ export function ProjectsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

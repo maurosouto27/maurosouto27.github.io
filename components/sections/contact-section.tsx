@@ -1,22 +1,22 @@
-"use client"
+"use client";
 
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Mail, Phone, MapPin, Linkedin } from "lucide-react"
-import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const contactInfo = [
   {
     icon: MapPin,
     label: "Location",
     value: "Montevideo, Uruguay",
-    href: null,
+    href: "https://www.google.com/maps/place/Uruguay/@-32.4352714,-57.5647803,7z",
   },
   {
     icon: Phone,
     label: "Phone",
     value: "+598 91 296 186",
-    href: "tel:+59891296186",
+    href: "https://wa.me/59891296186?text=Hello!%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch.",
   },
   {
     icon: Mail,
@@ -30,10 +30,10 @@ const contactInfo = [
     value: "linkedin.com/in/maurosouto27",
     href: "https://www.linkedin.com/in/maurosouto27",
   },
-]
+];
 
 export function ContactSection() {
-  const { elementRef, isVisible } = useScrollAnimation(0.2)
+  const { elementRef, isVisible } = useScrollAnimation(0.2);
 
   return (
     <section id="contact" className="py-20 px-4 bg-muted/30">
@@ -54,13 +54,13 @@ export function ContactSection() {
         >
           <CardContent className="pt-6">
             <p className="text-center text-muted-foreground mb-8 leading-relaxed">
-              I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-              Feel free to reach out!
+              I'm always open to discussing new projects, creative ideas, or
+              opportunities to be part of your vision. Feel free to reach out!
             </p>
 
             <div className="grid sm:grid-cols-2 gap-6">
               {contactInfo.map((info, index) => {
-                const Icon = info.icon
+                const Icon = info.icon;
                 return (
                   <div
                     key={index}
@@ -70,28 +70,46 @@ export function ContactSection() {
                       <Icon className="h-5 w-5 text-accent" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium text-muted-foreground mb-1">{info.label}</p>
+                      <p className="text-sm font-medium text-muted-foreground mb-1">
+                        {info.label}
+                      </p>
                       {info.href ? (
                         <a
                           href={info.href}
-                          target={info.href.startsWith("http") ? "_blank" : undefined}
-                          rel={info.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                          target={
+                            info.href.startsWith("http") ? "_blank" : undefined
+                          }
+                          rel={
+                            info.href.startsWith("http")
+                              ? "noopener noreferrer"
+                              : undefined
+                          }
                           className="text-sm font-medium text-foreground hover:text-accent transition-colors break-all"
                         >
                           {info.value}
                         </a>
                       ) : (
-                        <p className="text-sm font-medium text-foreground">{info.value}</p>
+                        <p className="text-sm font-medium text-foreground">
+                          {info.value}
+                        </p>
                       )}
                     </div>
                   </div>
-                )
+                );
               })}
             </div>
 
             <div className="flex justify-center mt-8">
-              <Button size="lg" asChild className="hover:scale-105 transition-transform">
-                <a href="https://www.linkedin.com/in/maurosouto27" target="_blank" rel="noopener noreferrer">
+              <Button
+                size="lg"
+                asChild
+                className="hover:scale-105 transition-transform"
+              >
+                <a
+                  href="https://www.linkedin.com/in/maurosouto27"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Linkedin className="mr-2 h-4 w-4" />
                   Connect on LinkedIn
                 </a>
@@ -105,5 +123,5 @@ export function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
