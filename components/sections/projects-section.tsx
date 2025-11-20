@@ -12,7 +12,7 @@ const projects = [
       "A real production web application for Inti Aventura travel company. Features a private admin dashboard with authentication for managing trips. Public section currently in development. Active project with real clients.",
     image: "/inti-aventura.png",
     tags: ["React", "Next.js", "TypeScript", "MongoDB", "Authentication"],
-    liveUrl: "https://dev-inti-aventura.vercel.app/login",
+    liveUrl: "https://dev-inti-aventura.vercel.app",
     featured: true,
   },
   {
